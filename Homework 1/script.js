@@ -1,7 +1,8 @@
-let tbody = document.getElementById("tbody")
+let tbody = document.getElementById("tbody").style.display = "none";
 let type = document.getElementById('t-type')
 let brand = document.getElementById('b-brand')
 let btnOne = document.getElementById('btn-1')
+let table = document.getElementById('table')
 let carsData = null;
 
 fetch("https://raw.githubusercontent.com/sedc-codecademy/mkwd12-04-ajs/main/G1/HOMEWORK/cars.json")
@@ -44,9 +45,20 @@ function showCars(carsData) {
     }
 }
 
-// btnOne.addEventListener('click', function () {
+btnOne.addEventListener('click', function (e) {
+    e.preventDefault()
+    fetch("https://raw.githubusercontent.com/sedc-codecademy/mkwd12-04-ajs/main/G1/HOMEWORK/cars.json")
+        .then(function (res) {
+            return res.json()
+        })
+        .then(function (body) {
+            console.log(body);
+            carsData = body
+        })
 
-// })
+
+})
+
 
 function showTypeOfCars() {
     for (let car of carsData) {
