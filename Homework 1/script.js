@@ -70,14 +70,14 @@ btnOne.addEventListener('click', function (e) {
 
 function showTableFromTheOptions() {
     // for (let value of carsData) {
-
+    // return carsData.filter()
     // }
 }
 
 
 function showTypeOfCars() {
-    for (let car of carsData) { 
-    type.innerHTML += `
+    for (let car of carsData) {
+        type.innerHTML += `
     <option>${car.type}</option>           
     `
     }
