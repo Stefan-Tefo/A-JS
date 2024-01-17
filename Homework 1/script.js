@@ -1,6 +1,8 @@
 let tbody = document.getElementById("tbody").style.display = "none";
-let type = document.getElementById('t-type')
-let brand = document.getElementById('b-brand')
+
+let type = document.getElementById('t-type')  //.value ?
+let brand = document.getElementById('b-brand') //.value ?
+
 let btnOne = document.getElementById('btn-1')
 let table = document.getElementById('table')
 let carsData = null;
@@ -47,6 +49,13 @@ function showCars(carsData) {
 
 btnOne.addEventListener('click', function (e) {
     e.preventDefault()
+
+    // let value = type.value
+
+    // if (!value) {
+    //     "Enter a right option"
+    // }
+
     fetch("https://raw.githubusercontent.com/sedc-codecademy/mkwd12-04-ajs/main/G1/HOMEWORK/cars.json")
         .then(function (res) {
             return res.json()
@@ -59,11 +68,17 @@ btnOne.addEventListener('click', function (e) {
 
 })
 
+function showTableFromTheOptions() {
+    // for (let value of carsData) {
+
+    // }
+}
+
 
 function showTypeOfCars() {
-    for (let car of carsData) {
-        type.innerHTML += `
-    <option>${car.type}</option>
+    for (let car of carsData) { 
+    type.innerHTML += `
+    <option>${car.type}</option>           
     `
     }
 }
