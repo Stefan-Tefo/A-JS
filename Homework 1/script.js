@@ -1,7 +1,7 @@
 let tbody = document.getElementById("tbody").style.display = "none";
 
-let type = document.getElementById('t-type')  //.value ?
-let brand = document.getElementById('b-brand') //.value ?
+let type = document.getElementById('t-type')
+let brand = document.getElementById('b-brand')
 
 let btnOne = document.getElementById('btn-1')
 let table = document.getElementById('table')
@@ -61,17 +61,30 @@ btnOne.addEventListener('click', function (e) {
             return res.json()
         })
         .then(function (body) {
-            console.log(body);
             carsData = body
+            showTableFromTheOptions()
         })
 
 
 })
 
 function showTableFromTheOptions() {
-    // for (let value of carsData) {
-    // return carsData.filter()
-    // }
+    for (let car of carsData) {
+        if (type.value === 'SUV' && 'Sedan') {
+            tbody.innerHTML += `
+            <tr>
+            <td>${car.type}</td>
+            <td>${car.brand}</td>
+            <td>${car.model}</td>
+            <td>${car.doors}</td>
+            <td>${car.gasType}</td>
+            <td>${car.color}</td>
+            <td>${car.isNew}</td>
+            <td>${car.horsepower}</td>
+            </tr>
+            `
+        }
+    }
 }
 
 
