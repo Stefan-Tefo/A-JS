@@ -26,10 +26,28 @@ fetch("https://raw.githubusercontent.com/sedc-codecademy/mkwd12-04-ajs/main/G1/H
         console.log("Succsess");
     });
 
+    
+    btnOne.addEventListener('click', function (e) {
+        e.preventDefault()
+        
+        // let value = type.value
+        
+        // if (!value) {
+            //     alert("Enter a right option")
+    // }
+    showTableFromTheOptions()
+})
+
+function showTableFromTheOptions() {
+    if (type === 'SUV') {
+        showCars()
+    }
+}
+
 function showCars(carsData) {
 
-    tbody.innerHTML = ""
-    if (!carsData) return;
+    // tbody.innerHTML = ""
+    // if (!carsData) return;
 
     for (let car of carsData) {
         tbody.innerHTML += `
@@ -46,45 +64,6 @@ function showCars(carsData) {
     `
     }
 }
-
-btnOne.addEventListener('click', function (e) {
-    e.preventDefault()
-
-    // let value = type.value
-
-    // if (!value) {
-    //     alert("Enter a right option")
-    // }
-
-    fetch("https://raw.githubusercontent.com/sedc-codecademy/mkwd12-04-ajs/main/G1/HOMEWORK/cars.json")
-        .then(function (res) {
-            return res.json()
-        })
-        .then(function (body) {
-            carsData = body
-            showTableFromTheOptions()
-        })
-
-
-})
-
-function showTableFromTheOptions() {
-    if (type === 'SUV') {
-        return tbody.innerHTML += `
-        <tr>
-        <td>${car.type}</td>
-        <td>${car.brand}</td>
-        <td>${car.model}</td>
-        <td>${car.doors}</td>
-        <td>${car.gasType}</td>
-        <td>${car.color}</td>
-        <td>${car.isNew}</td>
-        <td>${car.horsepower}</td>
-        </tr>
-        `
-    }
-}
-
 
 function showTypeOfCars() {
     for (let car of carsData) {
