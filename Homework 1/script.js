@@ -1,4 +1,4 @@
-let tbody = document.getElementById("tbody").style.display = "none";
+let tbody = document.getElementById("tbody")            //.style.display = "none";
 
 let type = document.getElementById('t-type')
 let brand = document.getElementById('b-brand')
@@ -53,7 +53,7 @@ btnOne.addEventListener('click', function (e) {
     // let value = type.value
 
     // if (!value) {
-    //     "Enter a right option"
+    //     alert("Enter a right option")
     // }
 
     fetch("https://raw.githubusercontent.com/sedc-codecademy/mkwd12-04-ajs/main/G1/HOMEWORK/cars.json")
@@ -70,8 +70,8 @@ btnOne.addEventListener('click', function (e) {
 
 function showTableFromTheOptions() {
     for (let car of carsData) {
-        if (type.value === 'SUV' && 'Sedan') {
-            tbody.innerHTML += `
+        if (type.innerText === 'SUV') {
+            return tbody.innerHTML += `
             <tr>
             <td>${car.type}</td>
             <td>${car.brand}</td>
