@@ -14,7 +14,7 @@ fetch("https://raw.githubusercontent.com/sedc-codecademy/mkwd12-04-ajs/main/G1/H
     .then(function (body) {
         console.log(body);
         carsData = body
-        showCars(carsData)
+        // showCars(carsData)
         showTypeOfCars(carsData)
         showBrandOfCars(carsData)
 
@@ -69,21 +69,19 @@ btnOne.addEventListener('click', function (e) {
 })
 
 function showTableFromTheOptions() {
-    for (let car of carsData) {
-        if (type.innerText === 'SUV') {
-            return tbody.innerHTML += `
-            <tr>
-            <td>${car.type}</td>
-            <td>${car.brand}</td>
-            <td>${car.model}</td>
-            <td>${car.doors}</td>
-            <td>${car.gasType}</td>
-            <td>${car.color}</td>
-            <td>${car.isNew}</td>
-            <td>${car.horsepower}</td>
-            </tr>
-            `
-        }
+    if (type === 'SUV') {
+        return tbody.innerHTML += `
+        <tr>
+        <td>${car.type}</td>
+        <td>${car.brand}</td>
+        <td>${car.model}</td>
+        <td>${car.doors}</td>
+        <td>${car.gasType}</td>
+        <td>${car.color}</td>
+        <td>${car.isNew}</td>
+        <td>${car.horsepower}</td>
+        </tr>
+        `
     }
 }
 
