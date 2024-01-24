@@ -15,6 +15,11 @@ fetch("https://raw.githubusercontent.com/sedc-codecademy/mkwd12-04-ajs/main/G1/H
         console.log(body);
         carsData = body
         // showCars(carsData)
+        /* 
+            Испраќаш аргументи во повикот на двете функции - showTypeOfCars и showBrandOfCars,
+            но во дефиницијата на функцијата не очекуваш аргументи. 
+            Прочитај го коментарот на 50та линија, од иста природа е.
+        */
         showTypeOfCars(carsData)
         showBrandOfCars(carsData)
 
@@ -23,24 +28,30 @@ fetch("https://raw.githubusercontent.com/sedc-codecademy/mkwd12-04-ajs/main/G1/H
         console.log("ERROR", error);
     })
     .finally(function () {
-        console.log("Succsess");
+        console.log("Success");
     });
 
-    
-    btnOne.addEventListener('click', function (e) {
-        e.preventDefault()
-        
-        // let value = type.value
-        
-        // if (!value) {
-            //     alert("Enter a right option")
+
+btnOne.addEventListener('click', function (e) {
+    // Нема потреба од e.preventDefault() бидејќи немаме форма 
+    e.preventDefault()
+
+    // let value = type.value
+    // if (!value) {
+    //     alert("Enter a right option")
     // }
     showTableFromTheOptions()
 })
 
 function showTableFromTheOptions() {
+    /* Земи ја вредноста на опцијата која е селетирана, стави debugger за да видиш што вредност има type (https://stackoverflow.com/a/1085810) */
     if (type === 'SUV') {
-        showCars()
+        /* 
+            Очекуваш аргумент во дефиницијата на функцијата showCars, но овде не испраќаш аргументи.
+            Но, размисли, дали имаме потреба да ја испраќаме carsData како аргумент ако е глобална варијабла?
+            Дали имаме пристап до глобални варијабли низ функциите?
+        */
+        showCars() 
     }
 }
 
@@ -67,17 +78,13 @@ function showCars(carsData) {
 
 function showTypeOfCars() {
     for (let car of carsData) {
-        type.innerHTML += `
-    <option>${car.type}</option>           
-    `
+        type.innerHTML += `<option>${car.type}</option>`
     }
 }
 
 function showBrandOfCars() {
     for (let car of carsData) {
-        brand.innerHTML += `
-    <option>${car.brand}</option>
-    `
+        brand.innerHTML += `<option>${car.brand}</option>`
     }
 }
 
