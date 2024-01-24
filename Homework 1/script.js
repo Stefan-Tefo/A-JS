@@ -32,9 +32,7 @@ fetch("https://raw.githubusercontent.com/sedc-codecademy/mkwd12-04-ajs/main/G1/H
     });
 
 
-btnOne.addEventListener('click', function (e) {
-    // Нема потреба од e.preventDefault() бидејќи немаме форма 
-    e.preventDefault()
+btnOne.addEventListener('click', function () {
 
     // let value = type.value
     // if (!value) {
