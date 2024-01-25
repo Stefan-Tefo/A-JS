@@ -25,7 +25,8 @@ html.btnOne.addEventListener('click', () => {
     fetch("https://raw.githubusercontent.com/sedc-codecademy/mkwd12-04-ajs/main/G1/HOMEWORK/cars.json")
         .then((res) => res.json())
         .then((car) => {
-
+            debugger
+            console.log(value);
         })
 })
 
