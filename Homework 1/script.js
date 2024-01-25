@@ -26,7 +26,7 @@ html.btnOne.addEventListener('click', () => {
         .then((res) => res.json())
         .then((car) => {
             debugger
-            console.log(value);
+
         })
 })
 
