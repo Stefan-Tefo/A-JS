@@ -26,7 +26,12 @@ html.btnOne.addEventListener('click', () => {
         .then((res) => res.json())
         .then((car) => {
             debugger
-
+            console.log(value);
+            // if (value === car.type) {
+            //     car.forEach(car => {
+            //         html.tbody.innerHTML += createTable(car)
+            //     });
+            // }
         })
 })
 
