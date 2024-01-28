@@ -15,8 +15,8 @@ function ranodomBeer() {
 
 ranodomBeer()
 
-function showImage(beer) { 
+function showImage(beer) {
     return `
-    <img src="${beer.image_url}" alt="${beer.name}" />
+    <img src="${beer.image_url?.}" alt="${beer.name?.}" />
     `
 }
