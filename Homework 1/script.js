@@ -27,13 +27,11 @@ html.btnOne.addEventListener('click', () => {
         .then((car) => {
             debugger
             console.log(value);
-            // if (value === car.type) {
-            //     car.forEach(car => {
-            //         html.tbody.innerHTML += createTable(car)
-            //     });
-            // }
+            showCars(car).filter(`${value}`)
+
         })
 })
+
 
 function showCars(car) {
     car.forEach((car) => {
