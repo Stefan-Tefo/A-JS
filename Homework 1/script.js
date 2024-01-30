@@ -27,10 +27,11 @@ html.btnOne.addEventListener('click', () => {
         .then((car) => {
             debugger
             console.log(value);
-            showCars(car).filter(`${value}`)
+            showCars(car).filter(value)
 
         })
 })
+
 
 
 function showCars(car) {
