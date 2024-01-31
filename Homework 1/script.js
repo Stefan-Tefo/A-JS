@@ -27,6 +27,7 @@ html.btnOne.addEventListener('click', () => {
         .then((car) => {
             debugger
             console.log(value);
+            showCars(car.filter((car) => car.type === value))
             car.filter((car) => car.type === value).map(showCars(car))
         })
 })
