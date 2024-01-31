@@ -20,9 +20,9 @@ function showImage(beer) {
     <div class="image">
     <h3>Random generate beer</h3>
     <img src="${beer[0].image_url || "N/A"}" alt="${beer[0].name}" />
-    <p><img src="./">
+    <p><img src="./icons/beer.png" alt="beer_icon">
     ${beer[0].abv}%</p>
-    <p><img src="./">
+    <p><img src="./icons/menu.png" alt="recommendat_food">
     ${beer[0].food_pairing}</p>
     </div>
     `
@@ -32,8 +32,8 @@ html.btnOne.addEventListener('click', () => GenerateRandomBear())
 
 function GenerateRandomBear() {
     fetch("https://api.punkapi.com/v2/beers/random")
-    .then((res)=>res.json())
-    .then((beer)=>{
-        showImage(beer)
-    })
+        .then((res) => res.json())
+        .then((beer) => {
+            showImage(beer)
+        })
 }
