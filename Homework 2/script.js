@@ -20,8 +20,10 @@ function showImage(beer) {
     <div class="image">
     <h3>Random generate beer</h3>
     <img src="${beer[0].image_url || "N/A"}" alt="${beer[0].name}" />
-    <p>${beer[0].abv}%</p>
-    <p>${beer[0].food_pairing}</p>
+    <p><img src="./">
+    ${beer[0].abv}%</p>
+    <p><img src="./">
+    ${beer[0].food_pairing}</p>
     </div>
     `
 }
