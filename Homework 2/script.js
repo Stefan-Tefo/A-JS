@@ -1,5 +1,5 @@
 html = {
-
+    imageContainer: document.querySelector(".imageContainer")
 }
 
 function ranodomBeer() {
@@ -16,7 +16,11 @@ function ranodomBeer() {
 ranodomBeer()
 
 function showImage(beer) {
-    // return `
-    // <img src="${beer.image_url?.}" alt="${beer.name?.}" />
-    // `
+    return html.imageContainer.innerHTML = `
+    <div class="image">
+    <img src="${beer[0].image_url}" alt="${beer[0].name}" />
+    <p></p>
+    <p></p>
+    </div>
+    `
 }

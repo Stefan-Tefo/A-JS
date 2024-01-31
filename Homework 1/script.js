@@ -67,4 +67,3 @@ function showBrandOfCars(car) {
 
 showAllCars()
 
-// https://stackoverflow.com/questions/1085801/get-selected-value-in-dropdown-list-using-javascript
