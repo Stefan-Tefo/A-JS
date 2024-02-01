@@ -4,6 +4,8 @@ const html = {
     brandOfCar: document.querySelector("#brandOfCar"),
     btnOne: document.querySelector("#btnOne"),
     table: document.querySelector("#table"),
+    modelInput: document.querySelector("#modelInput"),
+    resetBtn: document.querySelector("#resetBtn"),
 }
 
 function showAllCars() {
@@ -18,17 +20,31 @@ function showAllCars() {
         .finally(() => console.log("Success"));
 }
 
+html.resetBtn.addEventListener("click", () => {
+    html.typeOfCar.value = ""
+    html.brandOfCar.value = ""
+    html.modelInput.value = ""
+    showAllCars()
+})
+
 html.btnOne.addEventListener('click', () => {
+    debugger
     const value = html.typeOfCar.value;
     const value1 = html.brandOfCar.value;
+    const value2 = html.modelInput.value;
+    if (!value || !value1 || !value2) {
+        alert("Invalid input")
+        showAllCars()
+    }
+
     html.tbody.innerHTML = '';
     fetch("https://raw.githubusercontent.com/sedc-codecademy/mkwd12-04-ajs/main/G1/HOMEWORK/cars.json")
         .then((res) => res.json())
         .then((car) => {
             debugger
-            console.log(value);
             showCars(car.filter((car) => car.type === value))
-            car.filter((car) => car.type === value).map(showCars(car))
+            showCars(car.filter((car) => car.brand === value1))
+            showCars(car.filter((car) => car.model.toLowerCase() === value2))
         })
 })
 
