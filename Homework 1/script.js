@@ -8,10 +8,20 @@ const html = {
     resetBtn: document.querySelector("#resetBtn"),
     numberOfDoor: document.querySelector("#numberOfDoor"),
     gasType: document.querySelector("#gasType"),
+    carColor: document.querySelector("#carColor"),
     newCar: document.querySelector("#newCar"),
-    oldCar: document.querySelector("#carColor")
-
+    oldCar: document.querySelector("#oldCar"),
+    horsePower: document.querySelector("#horse_power"),
 }
+
+
+html.newCar.addEventListener("click", () => {
+    const value6 = html.newCar.value
+    console.log(value6);
+    if (newCar) {
+        showCars(car.filter((car) => car.isNew === value6))
+    }
+})
 
 function showAllCars() {
     fetch("https://raw.githubusercontent.com/sedc-codecademy/mkwd12-04-ajs/main/G1/HOMEWORK/cars.json")
@@ -20,7 +30,6 @@ function showAllCars() {
             showCars(car)
             showBrandOfCars(car)
             showTypeOfCars(car)
-
         })
         .catch((error) => console.log("ERROR", error))
         .finally(() => console.log("Success"));
@@ -33,6 +42,10 @@ html.resetBtn.addEventListener("click", () => {
     html.numberOfDoor.value = "";
     html.gasType.value = "";
     html.carColor.value = "";
+    html.horsePower.value = "";
+    html.newCar.value = "";
+    html.oldCar.value = "";
+    showAllCars()
 })
 
 html.btnOne.addEventListener('click', () => {
@@ -42,21 +55,20 @@ html.btnOne.addEventListener('click', () => {
     const value2 = html.modelInput.value;
     const value3 = html.numberOfDoor.value;
     const value4 = html.gasType.value;
-    // const value5 = html.carColor.value;
-    const value6 = html.newCar.value;
-    const value7 = html.oldCar.value;
-    html.tbody.innerHTML = '';
+    const value5 = html.carColor.value;
+    const value8 = html.horsePower.value;
+
     fetch("https://raw.githubusercontent.com/sedc-codecademy/mkwd12-04-ajs/main/G1/HOMEWORK/cars.json")
         .then((res) => res.json())
         .then((car) => {
             debugger
-            console.log(value5);
             showCars(car.filter((car) => car.type === value))
             showCars(car.filter((car) => car.brand === value1))
             showCars(car.filter((car) => car.model.toLowerCase() === value2))
             showCars(car.filter((car) => car.doors === parseInt(value3)))
             showCars(car.filter((car) => car.gasType === value4))
-            // showCars(car.filter((car) => car.color === value5))
+            showCars(car.filter((car) => car.color.toLowerCase() === value5))
+            showCars(car.filter((car) => car.horsepower === parseInt(value8)))
         })
 })
 
