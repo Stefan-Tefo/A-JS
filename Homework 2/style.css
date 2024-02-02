@@ -9,6 +9,15 @@ body {
     justify-content: center;
     align-items: center;
     padding-top: 56px;
+    text-align: center;
+
+    >header {
+        padding-right: 120px;
+    }
+
+    >footer {
+        padding-left: 120px;
+    }
 }
 
 
@@ -17,6 +26,8 @@ body {
     grid-template-areas:
         "item1 item2"
     ;
+    align-items: center;
+    text-align: center;
 
     >img {
         height: 40rem;
@@ -28,6 +39,11 @@ body {
     display: grid;
     justify-items: center;
     width: 714px;
+
+    >div.info {
+        display: grid;
+
+    }
 }
 
 
