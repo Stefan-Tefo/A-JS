@@ -3,9 +3,6 @@
     box-sizing: border-box;
 }
 
-img {
-    height: 40rem;
-}
 
 body {
     display: flex;
@@ -14,16 +11,24 @@ body {
     padding-top: 56px;
 }
 
+
 #info_beer {
     display: grid;
     grid-template-areas:
         "item1 item2"
     ;
+
+    >img {
+        height: 40rem;
+        width: 100%;
+    }
 }
 
-.beer{
+.beer {
     display: grid;
     justify-items: center;
+    width: 714px;
 }
+
 
 @media screen and (max-width: 1400px) {}

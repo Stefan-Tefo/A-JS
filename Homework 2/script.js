@@ -24,11 +24,13 @@ function showImage(beer) {
             <h1>${beer[0].name}</h1>
         </div>
         <div id="info_beer">
-            <img id="item1" src="${beer[0].image_url || "N/A"}" alt="${beer[0].name}" />
+            <img id="item1" src="${beer[0].image_url || "N/A"}" alt="beer img" />
             <div id="info">
-            ${beer[0].abv}%</p>
-            ${beer[0].food_pairing}</p>
-            <button id="btnOne">Refresh</button>
+                <p><img src="./icons/procente.png">ABV:${beer[0].abv}%</p>
+                <p><img src="./icons/cutlery.png">Food:${beer[0].food_pairing}</p>
+                <p><img src="./icons/bitter.png">IBU's:${beer[0].ibu}</p>
+                <p><img src="./icons/barley.png">Malts:${beer[0].ingredients.malt.name}</p>
+                <p><img src="./icons/hop.png">Hops:${beer[0].ingredients.hops.name}</p>                
             </div>
         </div>
     </div>
