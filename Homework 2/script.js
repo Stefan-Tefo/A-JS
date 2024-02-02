@@ -18,12 +18,19 @@ ranodomBeer()
 
 function showImage(beer) {
     return html.imageContainer.innerHTML = `
-    <div class="image">
-    <h3>Random generate beer</h3>
-    <h3>${beer[0].name}</h3>
-    <img src="${beer[0].image_url || "N/A"}" alt="${beer[0].name}" />
-    ${beer[0].abv}%</p>
-    ${beer[0].food_pairing}</p>
+    <div class="beer">
+        <div id="first_beer_name">
+            <h1>Random generate beer</h1>
+            <h1>${beer[0].name}</h1>
+        </div>
+        <div id="info_beer">
+            <img id="item1" src="${beer[0].image_url || "N/A"}" alt="${beer[0].name}" />
+            <div id="info">
+            ${beer[0].abv}%</p>
+            ${beer[0].food_pairing}</p>
+            <button id="btnOne">Refresh</button>
+            </div>
+        </div>
     </div>
     `
 }

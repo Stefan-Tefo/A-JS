@@ -1,8 +1,29 @@
 * {
     margin: 0;
-    padding: 0;
+    box-sizing: border-box;
 }
 
-img{
-    height: 100px;
+img {
+    height: 40rem;
 }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 56px;
+}
+
+#info_beer {
+    display: grid;
+    grid-template-areas:
+        "item1 item2"
+    ;
+}
+
+.beer{
+    display: grid;
+    justify-items: center;
+}
+
+@media screen and (max-width: 1400px) {}
