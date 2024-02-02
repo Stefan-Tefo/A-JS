@@ -1,6 +1,7 @@
 html = {
     imageContainer: document.querySelector(".imageContainer"),
-    btnOne: document.querySelector("#btnOne")
+    btnOne: document.querySelector("#btnOne"),
+    btnGenerate: document.querySelector("#btn_generate"),
 }
 
 function ranodomBeer() {
@@ -19,10 +20,9 @@ function showImage(beer) {
     return html.imageContainer.innerHTML = `
     <div class="image">
     <h3>Random generate beer</h3>
+    <h3>${beer[0].name}</h3>
     <img src="${beer[0].image_url || "N/A"}" alt="${beer[0].name}" />
-    <p><img src="./icons/beer.png" alt="beer_icon">
     ${beer[0].abv}%</p>
-    <p><img src="./icons/menu.png" alt="recommendat_food">
     ${beer[0].food_pairing}</p>
     </div>
     `
