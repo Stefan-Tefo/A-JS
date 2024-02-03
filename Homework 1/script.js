@@ -47,8 +47,8 @@ html.btnOne.addEventListener('click', () => {
     const value3 = html.numberOfDoor.value;
     const value4 = html.gasType.value;
     const value5 = html.carColor.value;
-    // const value6 = html.newCar.value;
-    // const value7 = html.oldCar.value;
+    const value6 = html.newCar.value;
+    const value7 = html.oldCar.value;
     const value8 = html.horsePower.value;
     html.tbody.innerHTML = "";
     // if (!value2 || !value3 || !value5 || !value8) {
@@ -63,8 +63,8 @@ html.btnOne.addEventListener('click', () => {
             showCars(car.filter((car) => car.doors === parseInt(value3)))
             showCars(car.filter((car) => car.gasType === value4))
             showCars(car.filter((car) => car.color.toLowerCase() === value5))
-            // showCars(car.filter((car) => car.isNew === Boolean(value6)))
-            // showCars(car.filter((car) => car.isNew === Boolean(value7)))
+            showCars(car.filter((car) => car.isNew === Boolean(value6)))
+            showCars(car.filter((car) => car.isNew === Boolean(value7)))
             showCars(car.filter((car) => car.horsepower === parseInt(value8)))
         })
 })
