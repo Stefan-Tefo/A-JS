@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./beer.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beer Menu</title>
@@ -11,9 +11,16 @@
 <body>
     <header>
         <a href="./index.html">Generate random beer</a>
+        <br />
+        <select name="pagination" id="pagination">
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
     </header>
     <main>
-<div class="container"></div>
+        <input type="search" id="search">
+        <div class="container"></div>
     </main>
     <footer>
         <p>This is only for project purposes</p>

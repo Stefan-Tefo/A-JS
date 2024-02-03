@@ -5,7 +5,7 @@ html = {
 }
 
 function ranodomBeer() {
-    fetch("https://api.punkapi.com/v2/beers/1")
+    fetch("https://api.punkapi.com/v2/beers")
         .then((res) => res.json())
         .then((beer) => {
             console.log(beer);

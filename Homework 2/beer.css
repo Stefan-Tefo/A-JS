@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    padding: 100px;
+
+}
+
+.beer_menu {
+    border: 1px solid black;
+    display: grid;
+    justify-items: center;
+
+    >img {
+        height: 20rem;
+        width: auto;
+    }
+}
