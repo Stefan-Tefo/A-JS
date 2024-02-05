@@ -58,7 +58,7 @@ html.btnOne.addEventListener('click', () => {
     fetch("https://raw.githubusercontent.com/sedc-codecademy/mkwd12-04-ajs/main/G1/HOMEWORK/cars.json")
         .then((res) => res.json())
         .then((car) => {
-            // let filteredArray = car.filter((car) => (car.type ? car.type === value : true) ...);
+            // let filteredArray = car.filter((car) => (car.type ? car.type === value : true) && ...);
             // showCars(filteredArray);
             showCars(car)
             // showCars(car.filter((car) => car.type === value))
@@ -107,4 +107,4 @@ function showBrandOfCars(car) {
 
 
 showAllCars()
-
+// https://www.w3schools.com/tags/att_input_type_checkbox.asp
