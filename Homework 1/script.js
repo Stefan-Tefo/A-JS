@@ -47,8 +47,9 @@ html.btnOne.addEventListener('click', () => {
     const value3 = html.numberOfDoor.value;
     const value4 = html.gasType.value;
     const value5 = html.carColor.value;
-    // const value6 = html.newCar.value;
-    // const value7 = html.oldCar.value;
+    const value6 = html.newCar.checked;
+    const value7 = html.oldCar.checked;
+    debugger
     const value8 = html.horsePower.value;
     html.tbody.innerHTML = "";
     // if (!value2 || !value3 || !value5 || !value8) {
@@ -57,15 +58,18 @@ html.btnOne.addEventListener('click', () => {
     fetch("https://raw.githubusercontent.com/sedc-codecademy/mkwd12-04-ajs/main/G1/HOMEWORK/cars.json")
         .then((res) => res.json())
         .then((car) => {
-            showCars(car.filter((car) => car.type === value))
-            showCars(car.filter((car) => car.brand === value1))
-            showCars(car.filter((car) => car.model.toLowerCase() === value2))
-            showCars(car.filter((car) => car.doors === parseInt(value3)))
-            showCars(car.filter((car) => car.gasType === value4))
-            showCars(car.filter((car) => car.color.toLowerCase() === value5))
+            // let filteredArray = car.filter((car) => (car.type ? car.type === value : true) ...);
+            // showCars(filteredArray);
+            showCars(car)
+            // showCars(car.filter((car) => car.type === value))
+            // showCars(car.filter((car) => car.brand === value1))
+            // showCars(car.filter((car) => car.model.toLowerCase() === value2))
+            // showCars(car.filter((car) => car.doors === parseInt(value3)))
+            // showCars(car.filter((car) => car.gasType === value4))
+            // showCars(car.filter((car) => car.color.toLowerCase() === value5))
             // showCars(car.filter((car) => car.isNew === Boolean(value6)))
             // showCars(car.filter((car) => car.isNew === Boolean(value7)))
-            showCars(car.filter((car) => car.horsepower === parseInt(value8)))
+            // showCars(car.filter((car) => car.horsepower === parseInt(value8)))
         })
 })
 

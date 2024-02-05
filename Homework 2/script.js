@@ -37,4 +37,4 @@ function showImage(beer) {
     `
 }
 
-html.btnOne.addEventListener('click', () => ranodomBeer)
+html.btnOne.addEventListener('click', () => ranodomBeer())
