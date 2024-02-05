@@ -13,7 +13,8 @@ header{
 
 input {
    margin: 30px; 
-   padding: 5px;
+   padding: 10px;
+   font-size: 1.5rem;
 }
 
 .container {
