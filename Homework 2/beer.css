@@ -1,6 +1,21 @@
-*{
+* {
     margin: 0;
 }
+
+body {
+    text-align: center;
+
+}
+
+header{
+    margin: 15px;
+}
+
+input {
+   margin: 30px; 
+   padding: 5px;
+}
+
 .container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);

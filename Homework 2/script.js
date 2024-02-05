@@ -2,14 +2,14 @@ html = {
     imageContainer: document.querySelector(".imageContainer"),
     btnOne: document.querySelector("#btnOne"),
     btnGenerate: document.querySelector("#btn_generate"),
+  
 }
 
 function ranodomBeer() {
     fetch("https://api.punkapi.com/v2/beers/random")
         .then((res) => res.json())
-        .then((beer) => {
-            console.log(beer);
-            showImage(beer)
+        .then((body) => {
+            showImage(body)
         })
         .catch((error) => console.log("ERROR", error))
 }
@@ -38,4 +38,3 @@ function showImage(beer) {
 }
 
 html.btnOne.addEventListener('click', () => ranodomBeer)
-
