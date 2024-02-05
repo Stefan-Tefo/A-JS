@@ -5,7 +5,7 @@ html = {
 }
 
 function ranodomBeer() {
-    fetch("https://api.punkapi.com/v2/beers")
+    fetch("https://api.punkapi.com/v2/beers/random")
         .then((res) => res.json())
         .then((beer) => {
             console.log(beer);
@@ -37,12 +37,5 @@ function showImage(beer) {
     `
 }
 
-html.btnOne.addEventListener('click', () => GenerateRandomBear())
+html.btnOne.addEventListener('click', () => ranodomBeer())
 
-function GenerateRandomBear() {
-    fetch("https://api.punkapi.com/v2/beers/random")
-        .then((res) => res.json())
-        .then((beer) => {
-            showImage(beer)
-        })
-}
