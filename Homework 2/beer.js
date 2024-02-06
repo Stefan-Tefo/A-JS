@@ -5,10 +5,10 @@ html = {
 }
 
 pagination.addEventListener('change', function () {
-    html.container.innerHTML = ""
-    let value = pagination.value
+    pagination.value
     console.log(pagination.value);
-    fetch(`https://api.punkapi.com/v2/beers?page=2&per_page=${value}`)
+    html.container.innerHTML = ""
+    fetch(`https://api.punkapi.com/v2/beers?page=2&per_page=${pagination.value}`)
         .then(res => res.json())
         .then((body) => {
             showBeers(body)
@@ -37,10 +37,10 @@ function showBeers(beer) {
 
 function createTable(beer) {
     return `
-    < div class= "beer_menu" >
+    <div class="beer_menu">
         <p>${beer.name}</p>
-        <img src="${beer.image_url}" alt = "${beer.name}" id = "item3" />
+        <img src="${beer.image_url}" alt="${beer.name}" id="item3"/>
         <p>Food:${beer.food_pairing.join(", ")}</p>
-    </div >
+    </div>
     `
 }
