@@ -5,10 +5,9 @@ html = {
 }
 
 pagination.addEventListener('change', function () {
-    pagination.value
-    console.log(pagination.value);
+    let value = pagination.value
     html.container.innerHTML = ""
-    fetch(`https://api.punkapi.com/v2/beers?page=2&per_page=${pagination.value}`)
+    fetch(`https://api.punkapi.com/v2/beers?page=2&per_page=${value}`)
         .then(res => res.json())
         .then((body) => {
             showBeers(body)
