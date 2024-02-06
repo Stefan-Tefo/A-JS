@@ -60,6 +60,7 @@ html.btnOne.addEventListener('click', () => {
     fetch("https://raw.githubusercontent.com/sedc-codecademy/mkwd12-04-ajs/main/G1/HOMEWORK/cars.json")
         .then((res) => res.json())
         .then((newArr) => {
+            debugger
             let filteredArray = newArr.filter((newArr) => (newArr.type ? newArr.type === value : true) || (newArr.brand ? newArr.brand === value1 : true) || (newArr.model ? newArr.model.toLowerCase() === value2 : true));
             showCars(filteredArray);
 
@@ -104,7 +105,6 @@ function showBrandOfCars(car) {
         html.brandOfCar.innerHTML += `<option>${car.brand}</option>`;
     })
 }
-
 
 showAllCars()
 // https://www.w3schools.com/tags/att_input_type_checkbox.asp
