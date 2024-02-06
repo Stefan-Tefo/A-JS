@@ -14,6 +14,12 @@ const html = {
     horsePower: document.querySelector("#horse_power"),
 }
 
+function copyArray(car) {
+    let newArr = [];
+    car.forEach(car => newArr.push(car));
+    return newArr;
+}
+
 function showAllCars() {
     fetch("https://raw.githubusercontent.com/sedc-codecademy/mkwd12-04-ajs/main/G1/HOMEWORK/cars.json")
         .then((res) => res.json())
@@ -21,7 +27,7 @@ function showAllCars() {
             showCars(car)
             showBrandOfCars(car)
             showTypeOfCars(car)
-
+            copyArray(car)
         })
         .catch((error) => console.log("ERROR", error))
         .finally(() => console.log("Success"));
@@ -32,37 +38,31 @@ html.resetBtn.addEventListener("click", () => {
     html.typeOfCar.value = "";
     html.brandOfCar.value = "";
     html.modelInput.value = "";
-    html.numberOfDoor.value = "";
-    html.gasType.value = "";
-    html.carColor.value = "";
-    html.horsePower.value = "";
-    html.newCar.value = "";
-    html.oldCar.value = "";
+    //     html.numberOfDoor.value = "";
+    //     html.gasType.value = "";
+    //     html.carColor.value = "";
+    //     html.horsePower.value = "";
+    //     html.newCar.value = "";
+    //     html.oldCar.value = "";
 })
 
 html.btnOne.addEventListener('click', () => {
+    html.tbody.innerHTML = "";
     const value = html.typeOfCar.value;
     const value1 = html.brandOfCar.value;
     const value2 = html.modelInput.value;
-    const value3 = html.numberOfDoor.value;
-    const value4 = html.gasType.value;
-    const value5 = html.carColor.value;
-    const value6 = html.newCar.checked;
-    const value7 = html.oldCar.checked;
-    debugger
-    const value8 = html.horsePower.value;
-    html.tbody.innerHTML = "";
-    // if (!value2 || !value3 || !value5 || !value8) {
-    //     alert("Inavlid input")
-    // }
+    // const value3 = html.numberOfDoor.value;
+    // const value4 = html.gasType.value;
+    // const value5 = html.carColor.value;
+    // const value6 = html.newCar.checked;
+    // const value7 = html.oldCar.checked;
+    // const value8 = html.horsePower.value;
     fetch("https://raw.githubusercontent.com/sedc-codecademy/mkwd12-04-ajs/main/G1/HOMEWORK/cars.json")
         .then((res) => res.json())
-        .then((car) => {
-            // let filteredArray = car.filter((car) => (car.type ? car.type === value : true) && ...);
-            // showCars(filteredArray);
-            showCars(car)
-            // showCars(car.filter((car) => car.type === value))
-            // showCars(car.filter((car) => car.brand === value1))
+        .then((newArr) => {
+            let filteredArray = newArr.filter((newArr) => (newArr.type ? newArr.type === value : true) || (newArr.brand ? newArr.brand === value1 : true) || (newArr.model ? newArr.model.toLowerCase() === value2 : true));
+            showCars(filteredArray);
+
             // showCars(car.filter((car) => car.model.toLowerCase() === value2))
             // showCars(car.filter((car) => car.doors === parseInt(value3)))
             // showCars(car.filter((car) => car.gasType === value4))

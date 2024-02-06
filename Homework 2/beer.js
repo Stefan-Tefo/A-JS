@@ -56,7 +56,7 @@ function createTable(beer) {
     <div class="beer_menu">
         <p>${beer.name}</p>
         <img src="${beer.image_url || "N/A"}" alt="${beer.name}" id="item3"/>
-        <p>Food:${beer.food_pairing}</p>
+        <p>Food:${beer.food_pairing.join(", ")}</p>
     </div>
     `
 }
