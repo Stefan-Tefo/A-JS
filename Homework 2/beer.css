@@ -1,10 +1,10 @@
 * {
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
     text-align: center;
-
 }
 
 header{
@@ -20,7 +20,7 @@ input {
 .container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    /* grid-template-rows: repeat(5, 1fr); */
+    /* grid-template-rows:s */
     padding: 100px;
 
 }
