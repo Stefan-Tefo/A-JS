@@ -4,6 +4,10 @@ html = {
     search: document.querySelector("#search"),
 }
 
+html.search.addEventListener('keydown', () => {
+
+})
+
 pagination.addEventListener('change', function () {
     let value = pagination.value
     html.container.innerHTML = ""
@@ -16,6 +20,7 @@ pagination.addEventListener('change', function () {
 
 
 function searchBeer(beer) {
+    let value1 = html.search.value
     showBeerResult(beer.filter((beer) => beer.name === value1))
 }
 
