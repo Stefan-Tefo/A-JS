@@ -7,14 +7,14 @@ body {
     text-align: center;
 }
 
-header{
+header {
     margin: 15px;
 }
 
 input {
-   margin: 30px; 
-   padding: 10px;
-   font-size: 1.5rem;
+    margin: 30px;
+    padding: 10px;
+    font-size: 1.5rem;
 }
 
 .container {
@@ -32,5 +32,15 @@ input {
     >img {
         height: 20rem;
         width: auto;
+    }
+}
+
+@media screen and (max-width: 1400px) {}
+
+@media screen and (max-width: 400px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px;
     }
 }
