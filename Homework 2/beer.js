@@ -4,8 +4,16 @@ html = {
     search: document.querySelector("#search"),
 }
 
-html.search.addEventListener('keydown', () => {
 
+html.search.addEventListener('keydown', () => {
+    let value1 = html.search.value
+    console.log(value1);
+    fetch(`https://api.punkapi.com/v2/beers`)
+        .then(res => res.json())
+        .then((body) => {
+            showBeers(body.filter((body) => body.name ? body.name.toLowerCase() === value1 : true))
+        })
+        .catch((error) => console.log("ERROR", error))
 })
 
 pagination.addEventListener('change', function () {
@@ -16,22 +24,8 @@ pagination.addEventListener('change', function () {
         .then((body) => {
             showBeers(body)
         })
+        .catch((error) => console.log("ERROR", error))
 })
-
-
-function searchBeer(beer) {
-    let value1 = html.search.value
-    showBeerResult(beer.filter((beer) => beer.name === value1))
-}
-
-
-function showBeerResult() {
-    fetch("https://api.punkapi.com/v2/beers/beer_name")
-        .then(res => res.json())
-        .then((body) => {
-            showBeers(body)
-        })
-}
 
 function showBeers(beer) {
     beer.forEach((beer) => {
