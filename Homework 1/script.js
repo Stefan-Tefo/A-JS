@@ -37,7 +37,7 @@ html.resetBtn.addEventListener("click", () => {
     html.tbody.innerHTML = "";
     html.typeOfCar.value = "";
     html.brandOfCar.value = "";
-    html.modelInput.value = "";
+    // html.modelInput.value = "";
     //     html.numberOfDoor.value = "";
     //     html.gasType.value = "";
     //     html.carColor.value = "";
@@ -50,7 +50,7 @@ html.btnOne.addEventListener('click', () => {
     html.tbody.innerHTML = "";
     const value = html.typeOfCar.value;
     const value1 = html.brandOfCar.value;
-    const value2 = html.modelInput.value;
+    // const value2 = html.modelInput.value;
     // const value3 = html.numberOfDoor.value;
     // const value4 = html.gasType.value;
     // const value5 = html.carColor.value;
@@ -61,7 +61,7 @@ html.btnOne.addEventListener('click', () => {
         .then((res) => res.json())
         .then((newArr) => {
             debugger
-            let filteredArray = newArr.filter((newArr) => (newArr.type ? newArr.type === value : true) || (newArr.brand ? newArr.brand === value1 : true) || (newArr.model ? newArr.model.toLowerCase() === value2 : true));
+            let filteredArray = newArr.filter((newArr) => (newArr.type ? newArr.type === value : true) || (newArr.brand ? newArr.brand === value1 : true));    // || (newArr.model ? newArr.model.toLowerCase() === value2 : true)
             showCars(filteredArray);
 
             // showCars(car.filter((car) => car.model.toLowerCase() === value2))
@@ -72,6 +72,8 @@ html.btnOne.addEventListener('click', () => {
             // showCars(car.filter((car) => car.isNew === Boolean(value7)))
             // showCars(car.filter((car) => car.horsepower === parseInt(value8)))
         })
+        .catch((error) => console.log("ERROR", error))
+        .finally(() => console.log("Success"));
 })
 
 function showCars(car) {
@@ -107,4 +109,5 @@ function showBrandOfCars(car) {
 }
 
 showAllCars()
+
 // https://www.w3schools.com/tags/att_input_type_checkbox.asp

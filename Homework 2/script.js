@@ -15,8 +15,7 @@ function ranodomBeer() {
         })
         .catch((error) => console.log("ERROR", error))
 }
-// za site array vrednosti vaka
-// Get all malt names from the malt array 
+
 function getMaltNames(malt) {
     if (malt) {
         return malt.map(el => el.name).join(', ');
