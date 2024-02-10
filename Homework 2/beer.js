@@ -2,10 +2,18 @@ html = {
     container: document.querySelector(".container"),
     pagination: document.querySelector("#pagination"),
     search: document.querySelector("#search"),
+    abv: document.querySelector("#abv")
 }
 
 
-html.search.addEventListener('keydown', () => {
+function abvFilter(beer) {
+    const isBelow = html.abv.checked                       //rabotam na filterot ne raboti
+    if (isBelow) {
+        beer = beer.filter(beer => beer.abv >= 6);
+    }
+}
+
+html.search.addEventListener('input', () => {
     let value1 = html.search.value
     console.log(value1);
     fetch(`https://api.punkapi.com/v2/beers`)
@@ -28,6 +36,7 @@ function showAllBearsList() {
                     .then(res => res.json())
                     .then((body) => {
                         showBeers(body)
+                        showBeers(html.abv.addEventListener("input", abvFilter()))
                     })
                     .catch((error) => console.log("ERROR", error))
             })
