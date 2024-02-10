@@ -28,6 +28,7 @@ function showAllCars() {
             showBrandOfCars(car)
             showTypeOfCars(car)
             copyArray(car)
+            
         })
         .catch((error) => console.log("ERROR", error))
         .finally(() => console.log("Success"));
@@ -81,6 +82,17 @@ function showCars(car) {
         html.tbody.innerHTML += createTable(car)
     });
 }
+
+// function uniqeCarType(car) {
+//     let cars = car.map(car => car.type)
+//     let uniqeCar = []
+//     cars.forEach(car => {
+//         if (!uniqeCar.includes(car)) {
+//             uniqeCar.push(car);
+//         }
+//     });
+// }
+
 
 function createTable(car) {
     return `
