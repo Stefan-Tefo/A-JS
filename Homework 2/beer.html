@@ -13,8 +13,19 @@
         <a href="./index.html" id="top">RANDOM BEER</a>
     </header>
     <main>
-        <input type="checkbox" role="switch" id="abv" />
-        <label for="abv">Show beer below 6% abv</label>
+        <fieldset>
+            <input type="checkbox" role="switch" id="abv" />
+            <label for="abv">Show beer below 6% abv</label>
+
+            <input type="checkbox" role="switch" id="srmLight" />
+            <label for="srmLight">Light beer</label>
+
+            <input type="checkbox" role="switch" id="srmMedium" />
+            <label for="srmMedium">Medium beer</label>
+
+            <input type="checkbox" role="switch" id="srmDark" />
+            <label for="srmDark">Dark beer</label>
+        </fieldset>
         <input type="search" id="search">
         <select name="pagination" id="pagination">
             <option value="25">25</option>
