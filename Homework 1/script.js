@@ -28,7 +28,7 @@ function showAllCars() {
             showBrandOfCars(car)
             showTypeOfCars(car)
             copyArray(car)
-            
+
         })
         .catch((error) => console.log("ERROR", error))
         .finally(() => console.log("Success"));
@@ -58,6 +58,9 @@ html.btnOne.addEventListener('click', () => {
     // const value6 = html.newCar.checked;
     // const value7 = html.oldCar.checked;
     // const value8 = html.horsePower.value;
+    if (!value && !value1) {
+        return alert("First select from down below options")
+    }
     fetch("https://raw.githubusercontent.com/sedc-codecademy/mkwd12-04-ajs/main/G1/HOMEWORK/cars.json")
         .then((res) => res.json())
         .then((newArr) => {
@@ -82,17 +85,6 @@ function showCars(car) {
         html.tbody.innerHTML += createTable(car)
     });
 }
-
-// function uniqeCarType(car) {
-//     let cars = car.map(car => car.type)
-//     let uniqeCar = []
-//     cars.forEach(car => {
-//         if (!uniqeCar.includes(car)) {
-//             uniqeCar.push(car);
-//         }
-//     });
-// }
-
 
 function createTable(car) {
     return `
