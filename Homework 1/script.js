@@ -28,6 +28,7 @@ function showAllCars() {
             showBrandOfCars(car)
             showTypeOfCars(car)
             copyArray(car)
+            newArr = car
 
         })
         .catch((error) => console.log("ERROR", error))
@@ -48,6 +49,7 @@ html.resetBtn.addEventListener("click", () => {
 })
 
 html.btnOne.addEventListener('click', () => {
+    // debugger
     html.tbody.innerHTML = "";
     const value = html.typeOfCar.value;
     const value1 = html.brandOfCar.value;
@@ -61,11 +63,8 @@ html.btnOne.addEventListener('click', () => {
     if (!value && !value1) {
         return alert("First select from down below options")
     }
-
-    debugger
     let filteredArray = newArr.filter((newArr) => (newArr.type ? newArr.type === value : true) || (newArr.brand ? newArr.brand === value1 : true));    // || (newArr.model ? newArr.model.toLowerCase() === value2 : true)
     showCars(filteredArray);
-
     // showCars(car.filter((car) => car.model.toLowerCase() === value2))
     // showCars(car.filter((car) => car.doors === parseInt(value3)))
     // showCars(car.filter((car) => car.gasType === value4))
@@ -73,7 +72,6 @@ html.btnOne.addEventListener('click', () => {
     // showCars(car.filter((car) => car.isNew === Boolean(value6)))
     // showCars(car.filter((car) => car.isNew === Boolean(value7)))
     // showCars(car.filter((car) => car.horsepower === parseInt(value8)))
-
 })
 
 function showCars(car) {
@@ -107,6 +105,7 @@ function showBrandOfCars(car) {
         html.brandOfCar.innerHTML += `<option>${car.brand}</option>`;
     })
 }
+
 
 showAllCars()
 
