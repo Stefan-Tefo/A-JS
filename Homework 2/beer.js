@@ -24,69 +24,99 @@ const prevPage = () => {
     showAllBearsList(currentPage)
 }
 
-function buttonsCheck(res) {
-    if (res.next === null) {
-        nextBtn.style.display = "none";
-    } else {
-        nextBtn.style.display = "block";
-    }
-    if (res.prev === null) {
-        prevBtn.style.display = "none";
-    } else {
-        prevBtn.style.display = "block";
-    }
-};
+// function buttonsCheck(res) {
+//     if (res.next === null) {
+//         nextBtn.style.display = "none";
+//     } else {
+//         nextBtn.style.display = "block";
+//     }
+//     if (res.prev === null) {
+//         prevBtn.style.display = "none";
+//     } else {
+//         prevBtn.style.display = "block";
+//     }
+// };
 
 html.abv.addEventListener("input", () => {
     const isBelow = html.abv.checked
-    fetch(`https://api.punkapi.com/v2/beers`)
+    fetch(`https://api.punkapi.com/v2/beers?abv_lt=6`)
         .then(res => res.json())
         .then((body) => {
             html.container.innerHTML = ""
+            // if (isBelow) {
+            //     showBeers(body = body.filter(body => body.abv >= 6));
+            // }
             if (isBelow) {
-                showBeers(body = body.filter(body => body.abv >= 6));
+                showBeers(body)
             }
         })
         .catch((error) => console.log("ERROR", error))
+    if (!isBelow) {
+        debugger
+        html.container.innerHTML = ""
+        showAllBearsList(currentPage)
+    }
 })
 
 html.srmLight.addEventListener("input", () => {
     const light = html.srmLight.checked
-    fetch(`https://api.punkapi.com/v2/beers`)
+    console.log(light);
+    fetch(`https://api.punkapi.com/v2/beers?ebc_gt6`)
         .then(res => res.json())
         .then((body) => {
             html.container.innerHTML = ""
+            // if (light) {
+            //     showBeers(body = body.filter(body => body.srm >= 6));
+            // }
             if (light) {
-                showBeers(body = body.filter(body => body.srm >= 6));
+                showBeers(body)
             }
         })
         .catch((error) => console.log("ERROR", error))
+    if (!light) {
+        html.container.innerHTML = ""
+        showAllBearsList(currentPage)
+    }
 })
 
 html.srmMedium.addEventListener("input", () => {
     const medium = html.srmMedium.checked
-    fetch(`https://api.punkapi.com/v2/beers`)
+    fetch(`https://api.punkapi.com/v2/beers?ebc_gt=9&ebc_lt=20`)
         .then(res => res.json())
         .then((body) => {
             html.container.innerHTML = ""
+            // if (medium) {
+            //     showBeers(body = body.filter(body => body.srm <= 9 || body.srm >= 20));
+            // }
             if (medium) {
-                showBeers(body = body.filter(body => body.srm <= 9 || body.srm >= 20));
+                showBeers(body)
             }
         })
         .catch((error) => console.log("ERROR", error))
+    if (!medium) {
+        html.container.innerHTML = ""
+        showAllBearsList(currentPage)
+    }
 })
 
 html.srmDark.addEventListener("input", () => {
     const dark = html.srmDark.checked
-    fetch(`https://api.punkapi.com/v2/beers`)
+    fetch(`https://api.punkapi.com/v2/beers?ebc_gt=20&ebc_lt=40`)
         .then(res => res.json())
         .then((body) => {
             html.container.innerHTML = ""
+            // if (dark) {
+            //     showBeers(body = body.filter(body => body.srm >= 20 || body.srm >= 40));
+            // }
             if (dark) {
-                showBeers(body = body.filter(body => body.srm >= 12 || body.srm >= 40));
+                showBeers(body)
             }
         })
         .catch((error) => console.log("ERROR", error))
+    if (!dark) {
+        html.container.innerHTML = ""
+        showAllBearsList(currentPage)
+    }
 })
 
 html.search.addEventListener('input', () => {
