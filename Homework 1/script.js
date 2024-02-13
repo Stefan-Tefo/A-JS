@@ -61,23 +61,19 @@ html.btnOne.addEventListener('click', () => {
     if (!value && !value1) {
         return alert("First select from down below options")
     }
-    fetch("https://raw.githubusercontent.com/sedc-codecademy/mkwd12-04-ajs/main/G1/HOMEWORK/cars.json")
-        .then((res) => res.json())
-        .then((newArr) => {
-            debugger
-            let filteredArray = newArr.filter((newArr) => (newArr.type ? newArr.type === value : true) || (newArr.brand ? newArr.brand === value1 : true));    // || (newArr.model ? newArr.model.toLowerCase() === value2 : true)
-            showCars(filteredArray);
 
-            // showCars(car.filter((car) => car.model.toLowerCase() === value2))
-            // showCars(car.filter((car) => car.doors === parseInt(value3)))
-            // showCars(car.filter((car) => car.gasType === value4))
-            // showCars(car.filter((car) => car.color.toLowerCase() === value5))
-            // showCars(car.filter((car) => car.isNew === Boolean(value6)))
-            // showCars(car.filter((car) => car.isNew === Boolean(value7)))
-            // showCars(car.filter((car) => car.horsepower === parseInt(value8)))
-        })
-        .catch((error) => console.log("ERROR", error))
-        .finally(() => console.log("Success"));
+    debugger
+    let filteredArray = newArr.filter((newArr) => (newArr.type ? newArr.type === value : true) || (newArr.brand ? newArr.brand === value1 : true));    // || (newArr.model ? newArr.model.toLowerCase() === value2 : true)
+    showCars(filteredArray);
+
+    // showCars(car.filter((car) => car.model.toLowerCase() === value2))
+    // showCars(car.filter((car) => car.doors === parseInt(value3)))
+    // showCars(car.filter((car) => car.gasType === value4))
+    // showCars(car.filter((car) => car.color.toLowerCase() === value5))
+    // showCars(car.filter((car) => car.isNew === Boolean(value6)))
+    // showCars(car.filter((car) => car.isNew === Boolean(value7)))
+    // showCars(car.filter((car) => car.horsepower === parseInt(value8)))
+
 })
 
 function showCars(car) {
