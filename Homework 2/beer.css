@@ -15,6 +15,10 @@ header {
     margin: 15px;
 }
 
+button{
+    margin-bottom: 5rem;
+}
+
 input {
     margin: 30px;
     padding: 10px;

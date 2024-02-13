@@ -6,7 +6,36 @@ html = {
     srmLight: document.querySelector("#srmLight"),
     srmMedium: document.querySelector("#srmMedium"),
     srmDark: document.querySelector("#srmDark"),
+    prevBtn: document.querySelector("#prevBtn"),
+    nextBtn: document.querySelector("#nextBtn"),
 }
+
+let currentPage = 1;
+
+const nextPage = () => {
+    html.container.innerHTML = ""
+    currentPage++;
+    showAllBearsList(currentPage)
+}
+
+const prevPage = () => {
+    html.container.innerHTML = ""
+    currentPage--;
+    showAllBearsList(currentPage)
+}
+
+function buttonsCheck(res) {
+    if (res.next === null) {
+        nextBtn.style.display = "none";
+    } else {
+        nextBtn.style.display = "block";
+    }
+    if (res.prev === null) {
+        prevBtn.style.display = "none";
+    } else {
+        prevBtn.style.display = "block";
+    }
+};
 
 html.abv.addEventListener("input", () => {
     const isBelow = html.abv.checked
@@ -70,19 +99,19 @@ html.search.addEventListener('input', () => {
         })
         .catch((error) => console.log("ERROR", error))
 })
-function showAllBearsList() {
-    fetch(`https://api.punkapi.com/v2/beers?page=2&per_page=25`)
+function showAllBearsList(currentPage) {
+    fetch(`https://api.punkapi.com/v2/beers?page=${currentPage}&per_page=25`)
         .then(res => res.json())
         .then((body) => {
             showBeers(body)
             pagination.addEventListener('change', function () {
                 let value = pagination.value
                 html.container.innerHTML = ""
-                fetch(`https://api.punkapi.com/v2/beers?page=2&per_page=${value}`)
+                fetch(`https://api.punkapi.com/v2/beers?page=${currentPage}&per_page=${value}`)
                     .then(res => res.json())
                     .then((body) => {
                         showBeers(body)
-                        html.abv = uncheacke
+                        // html.abv = uncheacked
                     })
                     .catch((error) => console.log("ERROR", error))
             })
@@ -90,7 +119,7 @@ function showAllBearsList() {
         .catch((error) => console.log("ERROR", error))
 }
 
-showAllBearsList()
+showAllBearsList(currentPage)
 
 function showBeers(beer) {
     beer.forEach((beer) => {
@@ -100,10 +129,12 @@ function showBeers(beer) {
 
 function createTable(beer) {
     return `
-    <div class="beer_menu">
+        <div class="beer_menu">
         <p>${beer.name}</p>
         <img src="${beer.image_url}" alt="${beer.name}" id="item3"/>
         <p>Food: ${beer.food_pairing.join(", ")}</p>
-    </div>
-    `
+        </div>
+        `
 }
+nextBtn.addEventListener("click", nextPage)
+prevBtn.addEventListener("click", prevPage)
