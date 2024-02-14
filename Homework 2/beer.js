@@ -11,6 +11,7 @@ html = {
 }
 
 let currentPage = 1;
+let perPage = 25;
 
 const nextPage = () => {
     html.container.innerHTML = ""
@@ -130,12 +131,12 @@ html.search.addEventListener('input', () => {
         .catch((error) => console.log("ERROR", error))
 })
 function showAllBearsList(currentPage) {
-    fetch(`https://api.punkapi.com/v2/beers?page=${currentPage}&per_page=25`)
+    fetch(`https://api.punkapi.com/v2/beers?page=${currentPage}&per_page=${perPage}`)
         .then(res => res.json())
         .then((body) => {
             showBeers(body)
             pagination.addEventListener('change', function () {
-                let value = pagination.value
+                perPage = pagination.value
                 html.container.innerHTML = ""
                 fetch(`https://api.punkapi.com/v2/beers?page=${currentPage}&per_page=${value}`)
                     .then(res => res.json())
