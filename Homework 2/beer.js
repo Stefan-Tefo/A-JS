@@ -130,24 +130,27 @@ html.search.addEventListener('input', () => {
         })
         .catch((error) => console.log("ERROR", error))
 })
+
 function showAllBearsList(currentPage) {
     fetch(`https://api.punkapi.com/v2/beers?page=${currentPage}&per_page=${perPage}`)
         .then(res => res.json())
         .then((body) => {
             showBeers(body)
-            pagination.addEventListener('change', function () {
-                perPage = pagination.value
-                html.container.innerHTML = ""
-                fetch(`https://api.punkapi.com/v2/beers?page=${currentPage}&per_page=${perPage}`)
-                    .then(res => res.json())
-                    .then((body) => {
-                        showBeers(body)
-                    })
-                    .catch((error) => console.log("ERROR", error))
-            })
+
         })
         .catch((error) => console.log("ERROR", error))
 }
+
+pagination.addEventListener('change', function () {
+    perPage = pagination.value
+    html.container.innerHTML = ""
+    fetch(`https://api.punkapi.com/v2/beers?page=${currentPage}&per_page=${perPage}`)
+        .then(res => res.json())
+        .then((body) => {
+            showBeers(body)
+        })
+        .catch((error) => console.log("ERROR", error))
+})
 
 showAllBearsList(currentPage)
 
