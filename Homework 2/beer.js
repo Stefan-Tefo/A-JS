@@ -142,7 +142,6 @@ function showAllBearsList(currentPage) {
                     .then(res => res.json())
                     .then((body) => {
                         showBeers(body)
-                        // html.abv = uncheacked
                     })
                     .catch((error) => console.log("ERROR", error))
             })
