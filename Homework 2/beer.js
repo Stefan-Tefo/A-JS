@@ -25,19 +25,6 @@ const prevPage = () => {
     showAllBearsList(currentPage)
 }
 
-// function buttonsCheck(res) {
-//     if (res.next === null) {
-//         nextBtn.style.display = "none";
-//     } else {
-//         nextBtn.style.display = "block";
-//     }
-//     if (res.prev === null) {
-//         prevBtn.style.display = "none";
-//     } else {
-//         prevBtn.style.display = "block";
-//     }
-// };
-
 html.abv.addEventListener("input", () => {
     const isBelow = html.abv.checked
     fetch(`https://api.punkapi.com/v2/beers?abv_lt=6`)
@@ -136,7 +123,6 @@ function showAllBearsList(currentPage) {
         .then(res => res.json())
         .then((body) => {
             showBeers(body)
-
         })
         .catch((error) => console.log("ERROR", error))
 }
