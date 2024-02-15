@@ -138,7 +138,7 @@ function showAllBearsList(currentPage) {
             pagination.addEventListener('change', function () {
                 perPage = pagination.value
                 html.container.innerHTML = ""
-                fetch(`https://api.punkapi.com/v2/beers?page=${currentPage}&per_page=${value}`)
+                fetch(`https://api.punkapi.com/v2/beers?page=${currentPage}&per_page=${perPage}`)
                     .then(res => res.json())
                     .then((body) => {
                         showBeers(body)
