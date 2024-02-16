@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
@@ -15,7 +15,7 @@ header {
     margin: 15px;
 }
 
-button{
+button {
     margin-bottom: 5rem;
 }
 
@@ -41,6 +41,11 @@ input {
         height: 20rem;
         width: auto;
     }
+}
+
+div.prevNext {
+    display: flex;
+    justify-content: center;
 }
 
 @media screen and (max-width: 1400px) {}
