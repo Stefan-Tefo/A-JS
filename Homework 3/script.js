@@ -23,11 +23,12 @@ class Animal {
         if (this.type === "herbivore") {
             console.log(`The animal ${this.name} is a herbivore and does not eat other animals`);
         } else if (this.name === "carnivore" || this.isEaten == true) {
-            // if () {
             console.log(`The animal ${this.name} ate the ${animal.name}.`);
-            // }
         } else {
             console.log(`The animal ${this.name} tried to eat the ${animal.name} but it was too large.`);
+        }
+        if (this.type === "omnivore") {
+            console.log(`The animal ${this.name} is eating ${this.type}`);
         }
     }
 }
