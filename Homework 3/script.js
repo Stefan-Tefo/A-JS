@@ -35,7 +35,7 @@ class Animal {
 
 const zebra = new Animal("zebra", "herbivore", 10, 1.52)
 const lion = new Animal("lion", "carnivore", 12, 2.1, true)
-const human = new Animal("Stefan", "omnivore", 20, 1.84)
+const human = new Animal("human", "omnivore", 20, 1.84)
 
 zebra.eat()
 lion.eat(zebra)
