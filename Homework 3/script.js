@@ -20,13 +20,13 @@ class Animal {
         this.isEaten = isEaten;
     }
     eat(animal) {
-        if (animal instanceof Animal) {     //instanceof
+        if (animal instanceof Animal) {   //instanceof
             if (this.type === "herbivore") {
                 console.log(`The animal ${this.name} is a herbivore and does not eat other animals`);
-            } else if (this.name === "carnivore" || this.isEaten == true) {
-                console.log(`The animal ${this.name} ate the ${animal.name}.`);
-            } else {
+            } else if (animal.size > this.size) {   // If the animal is larger than this animal 
                 console.log(`The animal ${this.name} tried to eat the ${animal.name} but it was too large.`);
+            } else {
+                console.log(`The animal ${this.name} ate the ${animal.name}.`);
             }
         } else {
             console.log(`The animal ${this.name} is eating ${animal}`);
@@ -39,6 +39,6 @@ const lion = new Animal("lion", "carnivore", 12, 2.1, true)
 const human = new Animal("human", "omnivore", 20, 1.84)
 
 zebra.eat(zebra)
-lion.eat(zebra)
 human.eat(lion)
+lion.eat(human)
 zebra.eat('grass')
