@@ -27,7 +27,7 @@ class Animal {
         } else {
             console.log(`The animal ${this.name} tried to eat the ${animal.name} but it was too large.`);
         }
-        if (this.type === "omnivore") {
+        if (animal instanceof Animal) {     //instanceof
             console.log(`The animal ${this.name} is eating ${this.type}`);
         }
     }
