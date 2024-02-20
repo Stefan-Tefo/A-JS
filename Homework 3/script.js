@@ -22,7 +22,7 @@ class Animal {
     eat(animal) {
         if (animal instanceof Animal) {   //instanceof
             if (this.type === "herbivore") {
-                console.log(`The animal ${this.name} is a herbivore and does not eat other animals`);
+                console.log(`The animal ${this.name} is a herbivore and does not eat other animals.`);
             } else if (animal.size > this.size) {   // If the animal is larger than this animal 
                 console.log(`The animal ${this.name} tried to eat the ${animal.name} but it was too large.`);
             } else {
