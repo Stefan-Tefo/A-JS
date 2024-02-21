@@ -25,13 +25,13 @@ const prevPage = () => {
     showAllBearsList(currentPage)
 }
 
-function buttonsCheck(body) {
-    if (body === null) {
+function buttonsCheck(res) {
+    if (res.next === null) {
         html.nextBtn.style.display = "none";
     } else {
         html.nextBtn.style.display = "block";
     }
-    if (body === null) {
+    if (res.previous === null) {
         html.prevBtn.style.display = "none";
     } else {
         html.prevBtn.style.display = "block";
