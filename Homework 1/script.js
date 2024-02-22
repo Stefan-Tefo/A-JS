@@ -40,12 +40,12 @@ html.resetBtn.addEventListener("click", () => {
     html.typeOfCar.value = "";
     html.brandOfCar.value = "";
     // html.modelInput.value = "";
-    //     html.numberOfDoor.value = "";
-    //     html.gasType.value = "";
-    //     html.carColor.value = "";
-    //     html.horsePower.value = "";
-    //     html.newCar.value = "";
-    //     html.oldCar.value = "";
+    // html.numberOfDoor.value = "";
+    // html.gasType.value = "";
+    // html.carColor.value = "";
+    // html.horsePower.value = "";
+    // html.newCar.value = "";
+    // html.oldCar.value = "";
 })
 
 html.btnOne.addEventListener('click', () => {
