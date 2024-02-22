@@ -24,17 +24,18 @@ const prevPage = () => {
     currentPage--;
     showAllBearsList(currentPage)
 }
+
 function buttonsCheck(body) {
-    if (body === null) {
+    if (body.next === null) {
         html.nextBtn.disabled = true;
     } else {
         html.nextBtn.disabled = false;
     }
-    if (body === null) {
-        html.prevBtn.disabled = true;
-    } else {
-        html.prevBtn.disabled = false;
-    }
+    // if (body === null) {
+    //     html.prevBtn.disabled = true;
+    // } else {
+    //     html.prevBtn.disabled = false;
+    // }
 }
 
 
