@@ -26,6 +26,7 @@ const prevPage = () => {
 }
 
 function buttonsCheck(body) {
+    debugger
     if (body.next === null) {
         html.nextBtn.disabled = true;
     } else {
